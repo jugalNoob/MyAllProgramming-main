@@ -1,0 +1,29 @@
+DockerFile.dev //use only this 
+
+docker rmi -f express
+docker build -f Dockerfile.dev -t express .
+
+docker run -it -d --name expressapp -p 9000:9000  express
+
+docker run -p 9001:9000 myapp
+ docker run -it -d --name reactApp  -p 9000:9000 -v ${PWD}:/app express
+
+
+ /////and MERN 
+
+ DockerFile
+
+ docker-compose.ylm
+
+ docker-compose build
+
+  docker-compose up -d
+
+ docker-compose down
+
+docker rm -f $(docker ps -a -q) -->all container delete 
+
+docker rmi $(docker images -a -q) --> all imgaes delte
+
+
+docker volume prune --all voulme  delete 

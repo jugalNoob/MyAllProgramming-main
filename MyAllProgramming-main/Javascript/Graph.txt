@@ -1,0 +1,91 @@
+QWhat is Graph data structure?
+
+Ans:
+
+
+Qwhat is type of graph?
+
+Ans: 1:Directerd --- fixed array
+2::undirected ---  unfixed  array
+3::Null
+
+
+Qwhat is graph Representation?
+
+
+Martex
+
+let data=[
+
+    [0,1,1,0],
+    [1,0,1,1],
+    [1 , 1 , 0 , 0],
+    [0 , 1 , 0 , 0],
+
+]
+
+
+console.log(data)
+
+console.log(data[3][3])
+
+
+
+//Adjacency list graphy
+
+let adlist={
+
+    'a':['b' , 'c'],
+    'b':['a' , 'c' , 'd'],
+    'c':['a' , 'b' ],
+    'd':['b']
+}
+
+console.log(adlist)
+
+console.log(adlist.c)
+
+
+QMake graph and ass vertex?
+ANS::class Graph{
+    constructor(){
+
+        this.data={}
+    }
+
+    addVertes(vertex){
+
+        if(!this.data[vertex]){
+            this.data[vertex]=[]
+        }
+
+    }
+
+    AddEdge(v1 , v2){
+
+        if(!this.data[v1]){
+
+     
+
+        this.addVertes(v1)
+    }
+    if(!this.data[v2]){
+        this.addVertes(v2)
+    }
+
+    this.data[v1].push(v2)
+    this.data[v2].push(v1)
+}
+}
+let graph=new Graph()
+
+graph.addVertes("A")
+graph.AddEdge("A","B")
+graph.AddEdge("A","C")
+
+graph.AddEdge("B","C")
+graph.AddEdge("B","D")
+graph.addVertes("B")
+graph.addVertes("C")
+graph.addVertes("D")
+console.log(graph.data)

@@ -1,0 +1,78 @@
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const app = express();
+const port = 3000;
+
+// Middleware to parse cookies
+app.use(cookieParser());
+
+// Route with URL parameters
+app.get('/users/:id', (req, res) => {
+  const userId = req.params.id;
+  res.send(`User ID: ${userId}`);
+});
+
+// Route with query parameters
+app.get('/search', (req, res) => {
+  const query = req.query.q;
+  res.send(`Search Query: ${query}`);
+});
+
+// Route with request body (requires body-parser middleware)
+app.use(express.json());
+app.post('/add', (req, res) => {
+  const data = req.body;
+  res.json(data);
+});
+
+// Accessing headers
+app.get('/headers', (req, res) => {
+  const userAgent = req.headers['user-agent'];
+  res.send(`User-Agent Header: ${userAgent}`);
+});
+
+// Accessing cookies
+app.get('/cookies', (req, res) => {
+  const cookieValue = req.cookies.myCookie;
+  res.send(`Cookie Value: ${cookieValue}`);
+});
+
+// Accessing HTTP method, URL, and protocol
+app.get('/request-info', (req, res) => {
+  const method = req.method;
+  const url = req.url;
+  const protocol = req.protocol;
+  res.send(`Method: ${method}, URL: ${url}, Protocol: ${protocol}`);
+});
+
+// Accessing IP address and hostname
+app.get('/client-info', (req, res) => {
+  const clientIp = req.ip;
+  const hostname = req.hostname;
+  res.send(`Client IP: ${clientIp}, Hostname: ${hostname}`);
+});
+
+// Retrieving specific request header
+app.get('/user-agent', (req, res) => {
+  const userAgent = req.get('user-agent');
+  res.send(`User-Agent Header: ${userAgent}`);
+});
+
+// Checking content type and accepting MIME types
+app.post('/upload', (req, res) => {
+  if (req.is('json')) {
+    res.send('Request is in JSON format');
+  } else {
+    res.send('Request is not in JSON format');
+  }
+
+  if (req.accepts('json')) {
+    res.send('Accepts JSON response');
+  } else {
+    res.send('Does not accept JSON response');
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
+});

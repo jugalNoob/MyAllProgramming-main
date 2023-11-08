@@ -1,0 +1,175 @@
+Q;what is utf-8?
+ANS:-->UTF-8 is a Unicode character encoding method. This means that UTF-8 takes the code point for a given Unicode character and translates it into a string of binary.
+var utf8String = "Hello, 世界!";
+
+// Convert the string to a Buffer using UTF-8 encoding
+var utf8Buffer = Buffer.from(utf8String, 'utf8');
+
+// Convert the Buffer back to a string
+var decodedString = utf8Buffer.toString('utf8');
+
+// Print the decoded string
+console.log(decodedString , "helo");
+
+ 
+
+Chr -->A --> binary-- 0100100101 
+1 byte: Standard ASCII
+2 bytes: Arabic, Hebrew, most European scripts (most notably excluding Georgian)
+3 bytes: BMP
+4 bytes: All Unicode characters
+
+
+
+
+
+Q:what is ut-16?
+ANS:-->UTF-16:
+2 bytes: BMP
+4 bytes: All Unicode characters
+
+
+Qwhat is JSON.Strinfy?
+ANs:cronvert to JSON  -- >string 
+
+let data={
+name:"jugal",
+rool:69,
+solu:45
+}
+
+let jo=JSON.stringify(data)
+
+let pa=JSON.parse(jo)
+console.log(jo)
+
+console.log(pa.name)
+
+
+Qwhat is JSON.Paras?
+
+ANS::EXC is JSON 
+ANS:let data={
+name:"jugal",
+rool:69,
+solu:45
+}
+
+let jo=JSON.stringify(data)
+
+let pa=JSON.parse(jo)
+console.log(jo)
+
+console.log(pa.name)
+
+
+Qwhat is base64:
+Base64 is a binary-to-text encoding scheme that is widely used for encoding binary data, such as images, files, or binary network protocols, into a format that can be transmitted and represented in a text-based format. It allows binary data to be safely transmitted over text-based protocols, such as email or HTTP, without being corrupted or modified.
+
+var words = CryptoJS.enc.Base64.parse("SGVsbG8sIFdvcmxkIQ==");
+​
+var base64 = CryptoJS.enc.Base64.stringify(words);
+
+
+Qwhat is haxdecimale number?
+Hex cryptography typically refers to the use of hexadecimal (hex) representation in cryptographic algorithms or systems. Hexadecimal is a base-16 numbering system that uses digits 0-9 and letters A-F to represent values from 0 to 15. It is commonly used to represent binary data in a more compact and human-readable format.
+
+1::Key representation: Cryptographic keys, such as symmetric or asymmetric keys, 
+
+2::Hash functions: Cryptographic hash functions, such as SHA-256 or MD5, often produce output in a hexadecimal format. T
+
+
+3::Encoding schemes: Hexadecimal is sometimes used in encoding schemes, such as Base64 encoding,
+
+4::Digital signatures: In digital signatures, the output is typically a hash value that is then encrypted using a private key.
+
+
+var words = CryptoJS.enc.Hex.parse("48656c6c6f2c20576f726c6421");
+var hex = CryptoJS.enc.Hex.stringify(words);
+
+
+Qwhat is crypoGraphy
+
+ANS::
+Cryptography can be broadly classified into two main types: symmetric cryptography (also known as secret-key cryptography
+
+1:Symmetric Cryptography:
+
+Symmetric cryptography involves the use of a shared secret key to both encrypt and decrypt data. The same key is used by both the sender and the recipient. It is called "symmetric" 
+
+
+
+2::Asymmetric Cryptography:
+
+Asymmetric cryptography uses a pair of mathematically related keys: a public key and a private key.
+ The public key is widely distributed and used for encryption, while the private key is kept secret and used for decryption. The keys are generated together, but it is computationally infeasible to 
+derive the private key from the public key.
+
+
+
+::Uses a single shared secret key for both encryption and decryption.
+::The same key is used by both the sender and the recipient.
+::Encryption and decryption operations are computationally efficient, making it suitable for encrypting large amounts of data.
+::Key distribution is a challenge, as the secret key must be securely shared between communicating parties.
+::Examples of symmetric encryption algorithms include AES, DES, and 3DES.
+::Well-suited for scenarios where confidentiality and data integrity are the primary concerns, but not necessarily authentication.
+
+|||||||||||||||||||||||
+Asymmetric Cryptography:||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||
+
+
+1::Uses a pair of mathematically related keys: a public key and a private key.
+2::The public key is used for encryption, while the private key is used for decryption.
+Offers secure key exchange and digital signatures in addition to encryption.
+3::Key distribution is easier, as the public keys can be freely distributed.
+4::Encryption and decryption operations are more computationally intensive compared to symmetric cryptography.
+5::Examples of asymmetric encryption algorithms include RSA, Diffie-Hellman, and ECC.
+Suitable for scenarios where confidentiality, data integrity, authentication, and non-repudiation are required.
+
+
+||||||||||||||||||||Coder eater|||||||||||||||||
+
+
+Qwhat cryptograph?
+ANS::
+ 
+
+Symmetric Key Cryptography
+
+::Sender  -->  Encryption   DrfOP  ---- >  decrypt ->> reciver?
+
+
+
+
+2::ASymmetric Key Cryptograph 
+
+A public  --> email 
+
+a Private key -- >password 
+
+sender    
+
+
+||||||||||||||||||||||||||||||||||||||||
+
+A public Private -->email 
+
+A Private Key --> password 
+
+Receiver                                               
+
+
+Qwhat is Diglit Sigature?
+
+ANS::  message -- > Private --public  -->  siguature  -- > Verification --> yes / no
+
+
+
+
+
+
+
+
+
+ 

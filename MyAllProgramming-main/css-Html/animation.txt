@@ -1,0 +1,58 @@
+import React, { useState } from 'react';
+function AnimationComponent() {
+  const [animationPaused, setAnimationPaused] = useState(false);
+
+  // Rest of the code goes here
+
+  return (
+    <div className={`all-ione ${animationPaused ? 'animation-paused' : ''}`}>
+      <h1>jugal sharma</h1>
+      <button id="animation-button" onClick={() => setAnimationPaused(!animationPaused)}>
+        {animationPaused ? 'Play' : 'Pause'}
+      </button>
+    </div>
+  );
+}
+function AnimationComponent() {
+  const [animationPaused, setAnimationPaused] = useState(false);
+
+  function toggleAnimation() {
+    setAnimationPaused(!animationPaused);
+  }
+
+  return (
+    <div className={`all-ione ${animationPaused ? 'animation-paused' : ''}`}>
+      <h1>jugal sharma</h1>
+      <button id="animation-button" onClick={toggleAnimation}>
+        {animationPaused ? 'Play' : 'Pause'}
+      </button>
+    </div>
+  );
+}
+
+css //////////////////////!SECTION
+.all-ione {
+    width: 500px;
+    height: 500px;
+    background-color: gray;
+    position: absolute;
+    animation-name: sample;
+    animation-duration: 5s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  
+  @keyframes sample {
+    0% {
+      border-radius: 0px;
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animation-paused {
+    animation-play-state: paused;
+  }
+  

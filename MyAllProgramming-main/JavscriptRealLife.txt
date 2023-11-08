@@ -1,0 +1,159 @@
+
+// RealLife currying function for addition 
+
+function sendEmail(to) {
+    return function (subject) {
+        return function (body) {
+            console.log(`Sending email to ${to} with subject: "${subject}" and body: "${body}".`);
+        };
+    };
+}
+
+let sendEma = sendEmail("jugal2@gmail.com");
+let withSubject = sendEma("Hello");
+withSubject("This is the email body.");
+
+////!SECTION
+
+|||awiat Function ||||||||
+
+ async function one(){
+    console.log("jugal sharma")
+    console.log("first")
+    console.log("two")
+    await console.log("three")
+    console.log("five")
+
+}
+one()
+console.log("six")
+
+
+|||||||||Generator Function |||||||||
+A generator function in JavaScript is a 
+special type of function that allows you to 
+pause and resume its execution, producing a 
+sequence of values over time. 
+
+function* gen(){
+    yield 45
+    yield "juygal"
+}
+let uo=gen()
+console.log(uo.next())
+console.log(uo.next())
+console.log(uo.next())
+
+function* generateNumbers() {
+    let i = 100;
+    while (true) {
+      i++;
+      yield i;
+    }
+  }  
+  const numberGenerator = generateNumbers();
+  console.log(numberGenerator.next().value); // 101
+  console.log(numberGenerator.next().value); // 102
+  console.log(numberGenerator.next().value);
+  console.log(numberGenerator.next().value);
+  // ...
+  
+
+
+  //Math Example Real Life 
+  console.log(Math.sqrt(10))
+console.log(Math.pow(8, 2)); // Output: 64 8  * 8
+console.log(8*8)
+console.log(Math.sin(3)); // Output: 0.1411200080598672
+console.log(Math.PI); // Output: 3.141592653589793
+console.log(Math.ceil(1)); // Output: 1
+console.log(Math.abs(-5)); // Output: 5
+console.log(Math.floor(4.9)); // Output: 4
+console.log(Math.random()*45); // Output: A random decimal number between 0 and 1
+console.log(Math.max(10, 5, 8)); // Output: 10
+console.log(Math.min(10, 5, 8)); // Output: 5
+
+
+|||||||||||||||||||
+This Time Stamp Convert To Date Time
+let one = Date.now(); // Get the current timestamp in milliseconds
+let date = new Date(one); // Create a Date object using the timestamp
+// Get individual date components
+let year = date.getFullYear();
+let month = date.getMonth() + 1; // Months are zero-based, so add 1 to get the correct month
+let day = date.getDate();
+let hours = date.getHours();
+let minutes = date.getMinutes();
+let seconds = date.getSeconds();
+console.log(`Current Date and Time: ${year}-${month}-${day} ${hours}:${minutes}:${seconds}`);
+
+
+||||||||||||RandOm Arry Use IN JavaScript
+import React, { useState, useEffect } from 'react';
+import Home from "./Home";
+
+function Hash() {
+  const [Hashing, setHashing] = useState();
+
+let data = [10, 20, 30];
+let data1 = [40, 50, 60];
+let data2 = [70, 80, 90];
+let data3 = [100, 110, 120];
+
+let dataall = [data, data1, data2, data3];
+
+setInterval(() => {
+    const randomIndex = Math.floor(Math.random() * dataall.length);
+    console.log(dataall[randomIndex]);
+}, 2000);
+
+    // Clean up the interval when the component unmounts
+  
+  }, []);
+
+  return (
+    <div>
+      <Home state={Hashing} />
+    </div>
+  );
+}
+
+export default Hash;
+
+
+||||||||||| isThrottled |||||||||||
+   <button onclick="sendEmail()">sendEmail</button>
+let count = 1;
+let isThrottled = false;
+function sendEmail() {
+
+    let i="my name is number"
+    if (!isThrottled) {
+        console.log('Sending', count++ , i);
+        isThrottled = true;
+        setTimeout(() => {
+            isThrottled = false;
+        }, 1000);
+    }
+}
+
+
+<button onclick="debounce(sendEmail, 1000)">Send Email</button>
+
+<script>
+let count = 1;
+let timeout;
+
+function sendEmail() {
+    let i = "my name is number";
+    console.log('Sending', count++, i);
+}
+
+function debounce(func, delay) {
+    clearTimeout(timeout);
+    timeout = setTimeout(func, delay);
+}
+
+
+
+

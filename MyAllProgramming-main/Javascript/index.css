@@ -1,0 +1,18 @@
+.para p{
+    color: blue;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.para p:last-child{
+    color: green;
+}
+
+.para p:first-child{
+    color: red;
+}
+
+
+.para p:nth-child(2){
+    color: rgb(132, 0, 255);
+}

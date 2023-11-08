@@ -1,0 +1,48 @@
+import React, { useEffect, useState } from 'react';
+
+function App() {
+  const [user, setUser] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simulate an async operation (e.g., fetching data) using setTimeout
+  useEffect(() => {
+    // Simulate data loading after 2 seconds
+    setTimeout(() => {
+      setIsLoading(false);
+      setUser(true);
+    }, 2000);
+  }, []);
+
+  ///Second Row class
+  let all = 18;
+
+  let content;
+
+  if (all === 18) {
+    console.log(true);
+    content = <h1>Value is true</h1>;
+  } else {
+    console.log(false);
+    content = <h1>Value is false</h1>;
+  }
+
+  return (
+    <div>
+
+
+ 
+
+      {isLoading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <div>
+          <h1>User: {user ? 'true' : 'false'}</h1>
+          {content&& <h1>{content}</h1>}
+          {/* Render other content when not loading */}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default App;

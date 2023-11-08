@@ -1,0 +1,21 @@
+const  AddCart=(e)=>{
+    e.preventDefault();
+    const formData = {name,email,age,pass,gender};
+
+    localStorage.setItem("userdata" , JSON.stringify(formData))
+    console.log(formData)
+  }
+
+    
+    
+    / localStorage.setItem("userdata", JSON.stringify(formData));
+    // console.log("Data stored in localStorage:", formData);  
+    // // Removing an item from localStorage
+    // localStorage.removeItem("userdata");
+    // console.log("Data removed from localStorage");
+    // // Clearing all data from localStorage
+    // localStorage.clear();
+    // console.log("localStorage cleared");
+    // // Retrieving data from localStorage by key
+    // const retrievedData = JSON.parse(localStorage.getItem("userdata"));
+    // console.log("Data retrieved from localStorage:", retrievedData);

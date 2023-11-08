@@ -1,0 +1,62 @@
+https://www.javatpoint.com/javascript-design-patterns  //important
+
+Qwhat is algorithm complecity?
+Q time complexity 
+Ans:the time complexity is mainly calculated by country the number
+of the steps to finish the execution
+
+Qwhat is the space?
+
+Ans:::space complecity is the amount of space required to solve a proble
+.:space complexity = auxiliary space +input size;
+
+::Big 0 notation : use to denote complecity(both)
+
+///Time complecity 
+
+how manay line works ?
+
+Ans:: // Date =[] ::data -- line 1
+
+//elemnet=80 \\ delemnet  -- line 1
+// define a lopp  -- line 4
+//mach  element  -- line  1 
+// if else =mach -- line 1
+//if not match  -- line 1
+//not resdult found  -- line 1 
+
+
+
+10 is time complexity
+
+
+//Space complexity /// 1 MB 
+
+
+///Big 0 notation is 
+
+
+Q What is Asymptotic analysis and notation?
+
+Ans:What is asymptotic analysis? || f(n) = 5n2 + 6n +12
+
+..how to calculate time complexity
+
+..Asymptotic Notations
+
+
+
+5n2+6w+12 //
+5(100)2 + 6(100)+12
+
+5(1000)+600+12
+
+50000+600+12 == 50000
+
+
+
+
+
+
+
+///Binear seacdrh

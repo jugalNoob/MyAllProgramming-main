@@ -1,0 +1,40 @@
+Monitoring
+
+1::Metrics --> numbers |||Prometheus client collect metrics like a numbers
+
+npm i prom-client tools for matrices collect
+
+collect --> like ram memory cpu 
+
+|||||||||
+Create file prometheus-config
+
+global:
+  scrape_interval: 4s
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ["192.168.29.78:9000"]
+
+      2:::docker-compose.yml
+
+      ||||||||||
+      And docker run
+//this command      docker compose up
+ 
+ http://192.168.29.78:9000/metrics // and this is link
+2::Log Collection --> conseole.log()
+
+Create a graph -->Grafana
+
+
+docker run -d -p 3000:3000 --name=grafana grafana/grafana-oss
+
+http://localhost:3000/?orgId=1
+
+grafana -->name admin -->> password --> admin
+
+https://grafana.com/grafana/dashboards/11159-nodejs-application-dashboard/
+
+Clip cop Your -->Id

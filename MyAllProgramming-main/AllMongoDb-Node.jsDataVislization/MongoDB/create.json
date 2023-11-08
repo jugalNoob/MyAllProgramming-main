@@ -1,0 +1,73 @@
+[
+    {
+    "name":"jugal",
+    "age":11,
+    "hobbies":["walking" , "Reading"],
+    "identity":{hashPanCard:false , hashAdhaarCard:true},
+    "bio":"I am a youtuber and actor"
+    },
+    {
+        "name":"karan",
+        "age":20,
+        "hobbies":["cricket" , "Reading"],
+        "identity":{hashPanCard:false , hashAdhaarCard:true},
+        "bio":"I am a youtuber and actor"
+    },
+    {
+        "name":"Anku",
+        "age":23,
+        "hobbies":["Gaming" , "Reading"],
+        "identity":{hashPanCard:false , hashAdhaarCard:true},
+        "bio":"I am a youtuber and gamer"
+    },
+    {
+        "name":"nikhle",
+        "age":15,
+        "hobbies":["biking" , "girls"],
+        "identity":{hashPanCard:false , hashAdhaarCard:true},
+        "bio":"I am a impress the girls that my hobbies"
+    },
+    {
+        "name":"kinka",
+        "age":20,
+        "hobbies":["computer" , "Reading"],
+        "identity":{hashPanCard:false , hashAdhaarCard:true},
+        "bio":"I am a youtuber and actor"
+    },
+    {
+        "name":"viren",
+        "age":19,
+        "hobbies":["fighting" , "Reading"],
+        "identity":{hashPanCard:false , hashAdhaarCard:true},
+        "bio":"I am a  figter i am json"
+    },
+    {
+        "name":"RAHUL",
+        "age":11,
+        "hobbies":["biking" , "girls"],
+        "identity":{hashPanCard:false , hashAdhaarCard:true},
+        "bio":"I am a youtuber and actor"
+    },
+    {
+        "name":"janad",
+        "age":12,
+        "hobbies":["travling" , "actor"],
+        "identity":{hashPanCard:false , hashAdhaarCard:true},
+        "bio":"I am a actor and travling"
+    },
+    {
+        "name":"amit",
+        "age":25,
+        "hobbies":["raping" , "Reading"],
+        "identity":{hashPanCard:false , hashAdhaarCard:true},
+        "bio":"I am a Raping and actor"
+    },
+    {
+        "name":"panku",
+        "age":30,
+        "hobbies":["biking" , "Reading"],
+        "identity":{hashPanCard:false , hashAdhaarCard:true},
+        "bio":"I am a youtuber and biker"
+    }
+]
+        

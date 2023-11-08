@@ -1,0 +1,155 @@
+|||||||||||||||React.js Renders |||||||
+
+import React, { useEffect, useState } from 'react';
+
+function App() {
+  const [user, setUser] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simulate an async operation (e.g., fetching data) using setTimeout
+  useEffect(() => {
+    // Simulate data loading after 2 seconds
+    setTimeout(() => {
+      setIsLoading(false);
+      setUser(true);
+    }, 2000);
+  }, []);
+
+  ///Second Row class
+  let all = 18;
+
+  let content;
+
+  if (all === 18) {
+    console.log(true);
+    content = <h1>Value is true</h1>;
+  } else {
+    console.log(false);
+    content = <h1>Value is false</h1>;
+  }
+
+  return (
+    <div></div>
+      {isLoading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <div>
+          <h1>User: {user ? 'true' : 'false'}</h1>
+          {content&& <h1>{content}</h1>}
+          {/* Render other content when not loading */}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default App;
+
+
+///UseMemo reactLife example
+
+import React, { useMemo, useState } from 'react';
+function App() {
+  const [count, setCount] = useState(0);
+  const [item, setItem] = useState(0);
+
+  // Use useMemo to calculate multicount
+  const multicount = useMemo(() => {
+    console.log("multcount");
+    return count * 5;
+  }, [count]); // Specify count as a dependency
+
+  return (
+    <div>
+      <h1>count: {count}</h1>
+      <h1>item: {item}</h1>
+      <h1>multicount: {multicount}</h1>
+
+      <br />
+      <button onClick={() => setCount(count + 1)}>update count</button>
+      <button onClick={() => setItem(item + 5)}>update item</button>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+import React, { useMemo, useState, useCallback } from 'react';
+
+function App() {
+  const [count, setCount] = useState(0);
+  const [item, setItem] = useState(0);
+
+  const calculateMulticount = useMemo(() => {
+    console.log("Calculating multicount...");
+    return count * 5;
+  }, [count]);
+
+  const calculateClasses = useCallback(() => {
+    console.log("Calculating classes...");
+    return count * 5;
+  }, [count]);
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <h1>Item: {item}</h1>
+      <h1>Multicount: {calculateMulticount}</h1>
+      <h1>CallUse: {calculateClasses()}</h1>
+
+      <br />
+      <button onClick={() => setCount(count + 1)}>Increment Count</button>
+      <button onClick={() => setItem(item + 5)}>Increment Item</button>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+///UseEffect vs UseMemo 
+
+import React,{useState , useEffect  , useCallback,useMemo} from 'react'
+function App() {
+  const [count,setCount]= useState(0)
+  const [data , setData]=useState(100)
+  useEffect(()=>{
+    console.warn(Math.random()*45)
+  },[data])
+  ///Start use Memo start
+  const [mem , setMem]=useState(0)
+  const noRender=useMemo(()=>{
+    return<>
+    <h1 style={{color:"red"}}>no render vs again :: {mem}</h1>
+<h1>useEffect vs useMemi</h1>
+    </>
+  },[mem])
+  return (
+    <div>
+{/* 
+      {stop reander} */}
+      {/* useMmemo*/} 
+{noRender}
+
+      {/* */}
+
+      <h1>Render it agin and agin{mem} </h1>
+<h1>useEffect vs useMem</h1>
+
+<button onClick={()=>setMem(mem+1)}>useMemo</button>
+
+
+{/* 
+useEffect use in react.js */}
+<h2>{count}</h2>
+{data}
+<button onClick={()=>setCount(count +1)}>click</button>
+<br /><button onClick={()=>setData(data +1)}>data100</button>
+    </div>
+  )
+}
+
+export default App

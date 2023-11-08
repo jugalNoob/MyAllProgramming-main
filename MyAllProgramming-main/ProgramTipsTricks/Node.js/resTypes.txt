@@ -1,0 +1,77 @@
+app.get('/json-response', (req, res) => {
+  res.type('json');
+  res.json({ message: 'JSON response' });
+});
+
+
+app.get('/status-message', (req, res) => {
+  res.status(404);
+  res.send(`Status Message: ${res.statusMessage}`);
+});
+
+
+
+app.get('/locals-example', (req, res) => {
+  res.locals.variable = 'Local variable';
+  res.render('template');
+});
+
+
+app.get('/end-example', (req, res) => {
+  res.end('Response ended');
+});
+
+
+
+app.get('/download', (req, res) => {
+  res.sendFile('/path/to/file.txt');
+});
+
+
+
+app.get('/clear-cookie', (req, res) => {
+  res.clearCookie('user');
+  res.send('Cookie cleared!');
+});
+
+
+app.get('/set-cookie', (req, res) => {
+  res.cookie('user', 'john', { maxAge: 900000, httpOnly: true });
+  res.send('Cookie set!');
+});
+
+
+app.get('/custom-header', (req, res) => {
+  res.setHeader('X-Custom-Header', 'Custom Value');
+  res.send('Response with a custom header.');
+});
+
+
+app.get('/redirect-example', (req, res) => {
+  res.redirect('/new-location');
+});
+
+app.get('/new-location', (req, res) => {
+  res.send('Redirected to a new location.');
+});
+
+
+
+
+
+app.get('/not-found', (req, res) => {
+  res.status(404).send('Not Found');
+});
+
+
+app.get('/text', (req, res) => {
+  res.send('Hello, text response!');
+});
+
+app.get('/html', (req, res) => {
+  res.send('<h1>Hello, HTML response!</h1>');
+});
+
+app.get('/json', (req, res) => {
+  res.send({ message: 'Hello, JSON response!' });
+});

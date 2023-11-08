@@ -1,0 +1,42 @@
+#link{
+background-color: blue;
+width: 250px;
+height: 250px;
+}
+
+.sidebar {
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.sidebar span{
+    background-color: red;
+    font-size: 3rem;
+    cursor: pointer;
+  
+    margin-left: 500px;
+}
+
+.sides {
+    height: 250px;
+    width: 0;
+    background-color: rgb(178, 178, 178);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    transition:all 0.5s ;
+
+}
+
+/* .sides NvalinkP{
+    display: block;
+
+} */
+
+.sides{
+    cursor: pointer;
+}

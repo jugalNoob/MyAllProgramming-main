@@ -1,0 +1,67 @@
+Qehst is recursion data structure 
+
+Ans:re cursion  -- agin 
+
+//simple recursion
+
+function apple(x){
+console.log(x)
+    if(x <10){
+        apple(x+1)
+    }
+}
+
+let data=0;
+apple(data)
+
+
+function factorial(n) {
+    if (n === 0 || n === 1) {
+      return 1;
+    } else {
+      return n * factorial(n - 1);
+      
+      
+    }
+  }
+  
+  // Example usage
+  console.log(factorial(5  , )); // Output: 120
+
+
+function factorial(n) {
+    if (n === 0 || n === 1) {
+      return 1;
+    } else {
+      return n * factorial(n - 1);
+    }
+  }
+  
+  // Example usage
+  const number = 5;
+  const result = factorial(number);
+  console.log(`The factorial of ${number} is ${result}`);
+  
+
+
+  //indirect  recursion 
+
+  
+let money=100
+let apply=0
+function buyapple(x){
+    // console.log(x)
+if(x > 0){
+    console.log("i have " , x , "RS" , apply)
+    buymore(x)
+}else{
+    console.log("i dont have more " ,apply)
+}
+}
+function buymore(x){
+    apply ++
+    x=x-10
+    buyapple(x)
+console.log("buymore" , x)
+}
+buyapple(money)

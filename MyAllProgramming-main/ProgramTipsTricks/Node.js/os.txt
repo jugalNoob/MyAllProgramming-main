@@ -1,0 +1,25 @@
+const os = require('os');
+
+console.log('End of Line:', os.EOL);
+console.log('Available Parallelism:', os.availableParallelism()); // This function is not standard, so you need to provide its implementation or find a library that offers it.
+console.log('Architecture:', os.arch());
+console.log('CPU Constants:', os.constants);
+console.log('CPU Cores:', os.cpus());
+console.log('Null Device Path:', os.devNull);
+console.log('Endianness:', os.endianness());
+console.log('Free Memory:', os.freemem());
+console.log('System Uptime:', os.uptime(), 'seconds');
+
+const userInfo = os.userInfo();
+console.log('User Information:', userInfo);
+
+console.log('Home Directory:', os.homedir());
+console.log('Host Name:', os.hostname());
+console.log('Load Average:', os.loadavg());
+console.log('Machine Type:', os.machine());
+console.log('Network Interfaces:', os.networkInterfaces());
+console.log('Platform:', os.platform());
+console.log('Operating System Release:', os.release());
+console.log('Temporary Directory:', os.tmpdir());
+console.log('Total Memory:', os.totalmem());
+console.log('Operating System Type:', os.type());

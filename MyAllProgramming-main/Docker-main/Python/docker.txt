@@ -1,0 +1,25 @@
+docker build -t pythons .
+
+
+docker run --name pythonproject pythons
+
+# Use an official Python runtime as a base image
+FROM python:3.8-slim
+
+# Set the working directory inside the container
+WORKDIR /user/src/myapp
+
+# Copy the entire current directory into the container at /user/src/myapp
+COPY . /user/src/myapp/
+
+# Install any necessary dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Set environment variables if needed
+ENV APP_ENV production
+
+# Expose a port if your application listens on a specific port
+EXPOSE 8000
+
+# Specify the command to run when the container starts
+CMD ["python3", "main.py"]

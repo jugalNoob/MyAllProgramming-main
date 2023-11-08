@@ -1,0 +1,123 @@
+
+//Closures use Case
+
+function one(){
+  let i=10;
+  function two(){
+    console.log(i)
+  }
+  two()
+}
+
+one()
+function addre(num){
+  function add(b){
+    console.log(num +b)
+  }
+  return add
+}
+const addto=addre(5)
+addto(8)
+console.log(addto)
+
+
+//currying ///!SECTION////////////////////////////ANCHOR - 
+function get(a){
+  return function(b){
+    return function(c){
+      return function(d){
+console.log(a , b , c , d)
+      }
+    }
+  }
+}
+get(5)(5)(5)(5)
+
+
+function sendEmails(to){
+  return function(subject){
+    return function(body){
+      console.log( "sending email" , to ,  "with" ,  subject , " this is my body" , body)
+    }
+  }
+}
+
+let step1=sendEmails("jugal@gmail.com")
+let step2=step1("new order conformation")
+step2("hey jugal  , what going on")
+
+const add=(a)=>(b)=>(c)=>(d)=>a+b+c+d
+console.log(add(5)(5)(5)(5))
+
+
+//Heigh order function 
+const person = {
+  name: 'John',
+  age: 30,
+  greet: function(greeting) {
+    console.log(greeting + ', my name is ' + this.name);
+  }
+};
+
+const greetJohn = person.greet.bind(person, 'Hello');
+
+greetJohn(); // Output: 'Hello, my name is John'
+
+const one=(a)=>console.log(a)
+
+one("jugal sharma")
+
+//Most impornation what are generator function javascript/////////////////////ANCHOR - 
+
+//what is Iterator pattern?
+
+// yield keyword?
+
+
+//yield
+
+function* count(){
+  yield 2;
+  yield 4;
+  yield 6;
+  yield 8;
+
+}
+const enven=count()
+for(let cv of enven)
+  console.log(cv)
+
+///////what IIFE --Immdiately invoked function expression//////////////////
+
+(function add(a,b){
+ console.log( a+b);
+})(2 ,3)
+const value=(()=>100)()
+
+console.log(value)
+
+var result = (function() {
+  var x = 10;
+  var y = 20;
+  return x + y;
+})();
+
+console.log(result)
+
+const data=(async ()=>await fetch())
+console.log(data)
+
+
+///async await  ////////////////////////!SECTION
+
+ async function All(){
+  console.log("1 message")
+  await console.log("2 message")
+  console.log("3 message")
+  console.log("4 message")
+}
+console.log("5 message")
+All()
+console.log("6 message")
+
+

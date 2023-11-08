@@ -1,0 +1,25 @@
+.all-ione {
+    width: 500px;
+    height: 500px;
+    background-color: gray;
+    position: absolute;
+    animation-name: sample;
+    animation-duration: 5s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  
+  @keyframes sample {
+    0% {
+      border-radius: 0px;
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animation-paused {
+    animation-play-state: paused;
+  }
+  

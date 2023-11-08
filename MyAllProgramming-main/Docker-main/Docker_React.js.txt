@@ -1,0 +1,94 @@
+# FROM node:alpine 
+
+#   FROM node:alpine 
+
+# WORKDIR /app  
+
+# COPY ./package.json /app
+
+# RUN npm install 
+
+# COPY   . /app
+
+# # CMD [ "npm" , "start" ] 
+
+
+
+
+docker build -f Dockerfile.dev -t reactapp . // reactapp names
+
+docker images
+
+docker run -it --name reactApp reactapp -- > run your react.js
+
+docker ps
+
+docker ps -a
+
+docker run -it -d --name reactAppi -p 3000:3000  reactapp --> run react.js in docker //update host changes 
+
+docker run -it -d --name jugal  -p 3000:3000 -v ${PWD}:/app reactapp
+
+
+ docker run -it -d --name reactApp  -p 3000:3000 -v ${PWD}:/app reactapp  /// update code with 
+
+
+ docker logs reactApp --> check your status of npm
+
+ docker stop reactApp --> 
+
+ docker restart reactApp -->
+
+ dokcer start reactApp --> 
+///////////////////////////////!SECTION
+SEcond Docker Hub 
+
+
+Docker Manage Versions -->
+docker system prune -a -->delet all images
+docker build -t basic-app:v2 --> -->
+docker run --name basic-app -p 5000:5000 basic-app:v2 -->
+
+||||||||||||||||Docker Volumes -->automat changes your images  ||||||||||||||||||||||||||||||||||||
+
+docker build -t basic-app .
+
+
+FROM node:18
+
+WORKDIR /app
+
+COPY ./package*.json ./
+
+RUN npm install -g nodemon
+
+COPY  . .
+
+EXPOSE 9000
+
+CMD [ "npm" , "run" , "dev" ] 
+
+
+update ||docker run --name basic -p 5000:5000 --rm -v  /Users/sjuga/OneDrive/Pictures/MERN_STACK_Project/Docker/backend:/app basic-app
+
+docker Compose file--> ||||||||||||||||||
+
+compose.yml -->create a file
+
+Server :
+
+ img:
+
+ build: .
+
+ container_name: basic
+
+ ports:
+
+  - 5000:5000
+ 
+ docker-compose up -d
+
+
+
+

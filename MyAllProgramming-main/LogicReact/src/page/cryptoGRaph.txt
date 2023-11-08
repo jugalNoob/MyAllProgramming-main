@@ -1,0 +1,222 @@
+DES
+PBKDF2
+HMAC
+OFB
+CFB
+CTR
+CBC
+Base64
+Base64url
+security
+cryptoHash
+MD5
+SHA1SHA-1
+SHA256
+SHA-256
+RC4
+Rabbit
+AES
+
+
+///Digliet signature //!SECTION
+
+const CryptoJS = require('crypto-js');
+const jsrsasign = require('jsrsasign');
+
+// Your data to be signed
+const dataToSign = "Hello, World";
+
+// Generate an RSA key pair (you should manage your keys securely)
+const keyPair = jsrsasign.KEYUTIL.generateKeypair("RSA", 2048);
+const privateKey = keyPair.prvKeyObj;
+
+// Convert data to a WordArray for hashing
+const dataWordArray = CryptoJS.enc.Utf8.parse(dataToSign);
+
+// Hash the data (using SHA-256)
+const hashedData = CryptoJS.SHA256(dataWordArray).toString(CryptoJS.enc.Hex);
+
+// Create a digital signature
+const signature = jsrsasign.KJUR.crypto.Signature.sign(
+  "SHA256withRSA",
+  // Use the private key to sign
+  privateKey,
+  hashedData
+);
+
+// The signature is a hexadecimal string
+console.log("Digital Signature: " + signature);
+
+// To verify the signature, you'd need the public key (usually obtained from the recipient)
+const publicKey = keyPair.pubKeyObj;
+const isSignatureValid = jsrsasign.KJUR.crypto.Signature.verify(
+  "SHA256withRSA",
+  publicKey,
+  hashedData,
+  signature
+);
+
+console.log("Signature Verification Result: " + isSignatureValid);
+
+
+
+
+///////////Hahsing 
+
+var hash = CryptoJS.SHA3("Message", { outputLength: 512 });
+​
+var hash = CryptoJS.SHA3("Message", { outputLength: 384 });
+​
+var hash = CryptoJS.SHA3("Message", { outputLength: 256 });
+​
+var hash = CryptoJS.SHA3("Message", { outputLength: 224 });
+
+
+
+//////////!DES (Data Encryption Standard) 
+const CryptoJS = require('crypto-js');
+const plaintext = 'Hello, DES!';
+const key = 'SecretKey';
+const encrypted = CryptoJS.DES.encrypt(plaintext, key);
+const decrypted = CryptoJS.DES.decrypt(encrypted, key);
+console.log(decrypted.toString(CryptoJS.enc.Utf8));
+
+
+////PBKDF2 (Password-Based Key Derivation Function 2):
+PBKDF2 is used to securely derive keys from passwords.
+const CryptoJS = require('crypto-js');
+const password = 'MyPassword';
+const salt = CryptoJS.lib.WordArray.random(128/8); // Generate a random salt
+const keySize = 256/32; // 256-bit key
+const iterations = 1000; // Number of iterations
+const derivedKey = CryptoJS.PBKDF2(password, salt, { keySize, iterations });
+
+
+
+
+///////////////HMAC (Hash-based Message Authentication Code):
+HMAC is used for data integrity and authenticity verification.
+const CryptoJS = require('crypto-js');
+const message = 'Hello, HMAC!';
+const secretKey = 'SecretKey';
+const hmac = CryptoJS.HmacSHA256(message, secretKey);
+
+
+/////////Block Cipher Modes (OFB, CFB, CTR, CBC):
+These are used for block cipher encryption modes. Usage depends on the specific mode you want to implement.
+Base64 and Base64url Encoding/Decoding:
+JavaScript provides built-in functions for Base64 encoding and decoding.
+
+const data = 'Hello, Base64!';
+const encodedData = btoa(data); // Base64 encoding
+const decodedData = atob(encodedData); // Base64 decoding
+
+
+MD5, SHA-1, SHA-256 Hashing://////////////////////
+You can use "crypto-js" or built-in JavaScript
+ functions for these hash algorithms.const CryptoJS = require('crypto-js');
+const data = 'Hello, Hash!';
+const md5Hash = CryptoJS.MD5(data);
+const sha1Hash = CryptoJS.SHA1(data);
+const sha256Hash = CryptoJS.SHA256(data);
+
+
+
+RC4 and Rabbit Stream Ciphers:|||||||||||||||||||||||||||||||
+Stream ciphers are used for encrypting individual bits of data. You should use appropriate libraries or the Web 
+Crypto API for secure implementations.
+AES Encryption:
+AES (Advanced Encryption Standard) is widely 
+used for symmetric encryption. Here's an example using "crypto-js":
+
+const CryptoJS = require('crypto-js');
+const plaintext = 'Hello, AES!';
+const key = CryptoJS.enc.Hex.parse('000102030405060708090a0b0c0d0e0f');
+const iv = CryptoJS.enc.Hex.parse('101112131415161718191a1b1c1d1e1f');
+const encrypted = CryptoJS.AES.encrypt(plaintext, key, { iv });
+const decrypted = CryptoJS.AES.decrypt(encrypted, key, { iv });
+console.log(decrypted.toString(CryptoJS.enc.Utf8));
+
+
+
+/////////PBKDF2 ////////////////!SECTION
+var salt = CryptoJS.lib.WordArray.random(128 / 8);
+var key128Bits = CryptoJS.PBKDF2("Secret Passphrase", salt, {
+  keySize: 128 / 32
+});
+var key256Bits = CryptoJS.PBKDF2("Secret Passphrase", salt, {
+  keySize: 256 / 32
+});
+var key512Bits = CryptoJS.PBKDF2("Secret Passphrase", salt, {
+  keySize: 512 / 32
+});
+var key512Bits1000Iterations = CryptoJS.PBKDF2("Secret Passphrase", salt, {
+  keySize: 512 / 32,
+  iterations: 1000
+});
+
+
+
+//////////Rabbit is a high-performance stream cipher and a finalist in the eSTREAM Portfolio. It is one of the four designs selected after a 3 1/2-year process where 22 designs were evaluated.
+
+
+const CryptoJS = require('crypto-js');
+
+const plaintext = "Message";
+const secretPassphrase = "Secret Passphrase";
+
+// Encrypt the message
+const encrypted = CryptoJS.Rabbit.encrypt(plaintext, secretPassphrase);
+
+// Decrypt the ciphertext
+const decrypted = CryptoJS.Rabbit.decrypt(encrypted, secretPassphrase);
+// Convert the decrypted data to a string
+const decryptedText = decrypted.toString(CryptoJS.enc.Utf8);
+console.log("Original Message: " + plaintext);
+console.log("Decrypted Message: " + decryptedText);
+
+
+
+/////////////////////!SECTION
+Base64:
+Parse a Base64-encoded string and then stringify it.
+
+const base64String = "SGVsbG8sIFdvcmxkIQ==";
+const words = CryptoJS.enc.Base64.parse(base64String);
+const base64 = CryptoJS.enc.Base64.stringify(words);
+
+
+Latin1:-
+Parse a Latin1-encoded string and then stringify it.
+const latin1String = "Hello, World!";
+const words = CryptoJS.enc.Latin1.parse(latin1String);
+const latin1 = CryptoJS.enc.Latin1.stringify(words);
+
+
+Hex:
+Parse a Hex-encoded string and then stringify it.
+const hexString = "48656c6c6f2c20576f726c6421";
+const words = CryptoJS.enc.Hex.parse(hexString);
+const hex = CryptoJS.enc.Hex.stringify(words);
+
+
+Utf8:
+Parse a Utf8-encoded string and then stringify it.
+const utf8String = "𔭢";
+const words = CryptoJS.enc.Utf8.parse(utf8String);
+const utf8 = CryptoJS.enc.Utf8.stringify(words);
+
+
+Utf16:-
+Parse a Utf16-encoded string and then stringify it.
+const utf16String = "Hello, World!";
+const words = CryptoJS.enc.Utf16.parse(utf16String);
+const utf16 = CryptoJS.enc.Utf16.stringify(words);
+
+
+Utf16LE:
+Parse a Utf16LE (Little-Endian) encoded string and then stringify it.
+const utf16LEString = "Hello, World!";
+const words = CryptoJS.enc.Utf16LE.parse(utf16LEString);
+const utf16LE = CryptoJS.enc.Utf16LE.stringify(words);
+

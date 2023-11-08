@@ -1,0 +1,159 @@
+Docker Basic Commands
+
+1::Docker info
+
+2::docker version
+
+3::docker login
+
+4::docker logout
+
+5::docker help
+
+
+
+Docker  Images
+
+1::docker images --> check images
+
+2::docker rmi -f  --> delete image
+
+
+3::docker pull <imagename>--> mean docker hub
+
+4::docker run <imagename> --> 
+
+5::docker run -it -d --name reactAppi -p 3000:3000 reactapp
+
+6::docker tag <image-name>  //> 
+
+7::docker push <image-tag-name> storge  docker to resgister 
+
+8::docker history --> check history
+
+9::docker inspect --> low level information
+
+10::docker image prune --> delete all 
+
+
+Part:::3 |||||||||||||||Docker Container  command
+
+1::docker ps
+
+2::docker ps -a -->check all status
+
+3::docker stop <name> --> 
+
+4::docker start
+
+5::docker restart
+
+6::docker rm <container id>
+
+7::docker log <container-id> -->Fetch the logs of a container: 
+
+8::docker exec -t <container-id> /bin/bash
+
+9::docker inspect <conatiner-id>
+
+10::docker export contaniner <save log file>
+
+11:::docker kill -->Kill one or more running containers: docker kill
+
+12:: docker inspect <container-id> -->Display detailed information on one or more containers: 
+
+13::docker pause <container-id>  -->>Pause all processes within one or more containers: 
+
+14::docker container prune
+
+15::docker unpause
+
+16::docker restart 
+
+17::docker rename
+
+18::docker start 
+
+19::docker stop
+
+20::docker stats
+
+Part:::4 Docker Network Command ||||||||||||||||||||||||||||||||||
+
+1::docker network ls --> all list network
+
+2::docker netwrok create <network-name>  -->  Create a network
+
+3::docker newtwok rm <network-name> -->  Remove one or more networks
+
+4::docker netwroke inspect  --> Display detailed information on one or more networks
+
+5::docker netwrok prune  -->  prune       Remove all unused networks
+
+6::docker network disconnect --> Disconnect a container from a network
+
+7::docker newtwok  connect --> Connect a container to a network
+
+
+part::5::Docker Volumes Command|||||||||||||||||||||||||||||
+
+1::docker volume ls
+
+2::docker volume create <vol-name>
+
+3::docker volume inspect <vol-name>
+
+4::docker volume rm <vol-name>
+
+5::docker system  prune --volumes
+
+part:::6:::Docker Compose command :::::::::
+
+1::docker-compose  --version
+
+2::docker-compose up -d
+
+3::docker-compose down -->  Stop and remove containers, networks
+
+4::docker-compose ps -->List containers
+
+5::docker-compose images
+
+6::docker-compose stop
+
+7::docker-compose start
+
+8::docker-compose restart --> Restart service containers
+
+9::docker-compose   pause --> 
+
+10::docker-compose   unpause 
+
+
+Part::::::::::::::::::6  Docker Swarm Command -- 
+
+sudo docker swarm init
+
+sudo docker swarm join-token worker
+
+sudo docker swarm join --token <token>
+
+sudo docker swarm leave
+
+sudo docker service rm
+
+sudo docker service ls
+
+sudo docker service sacle <service-name>=resplica
+
+sudo docker service --name <service-name> -p 8080:8080 <image-name>
+
+
+
+
+
+
+
+
+
+Docker 

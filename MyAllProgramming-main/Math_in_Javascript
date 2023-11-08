@@ -1,0 +1,188 @@
+//Even Number add /////////////////////////////
+
+function one(num) {
+    if (num % 2 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(one(20)); // Outputs: false
+
+
+function checkEvenNumbers(numbers) {
+    return numbers.filter(isEven);
+}
+
+function isEven(num) {
+    return num % 2 === 0;
+}
+
+const numbersArray = [2, 5, 8, 11, 14];
+const evenNumbersArray = checkEvenNumbers(numbersArray);
+  
+console.log(evenNumbersArray); // Output: [2, 8, 14]
+
+
+
+//////Odd Number //////////////
+
+
+function isEven(number) {
+  return number % 2 === 0;
+}
+
+
+/////////////Even Number Start row  class ////////////////////
+function checkEvenNumbers(numbers) {
+  const evenNumbers = [];
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (isEven(numbers[i])) {
+      evenNumbers.push(numbers[i]);
+    }
+  }
+
+  return evenNumbers;
+}
+
+const numbersArray = [2, 5, 8, 11, 14];
+const evenNumbersArray = checkEvenNumbers(numbersArray);
+
+console.log(evenNumbersArray); // Output: [2, 8, 14]
+
+
+///////////////////////////Odd Number //////////////
+
+function isOdd(number) {
+  return number % 2 !== 0;
+}
+
+function checkOddNumbers(numbers) {
+  const oddNumbers = [];
+  
+  for (const number of numbers) {
+    if (isOdd(number)) {
+      oddNumbers.push(number);
+    }
+  }
+  
+  return oddNumbers;
+}
+
+const numbersArray = [2, 5, 8, 11, 14];
+const oddNumbersArray = checkOddNumbers(numbersArray);
+
+console.log(oddNumbersArray); // Output: [5, 11]
+
+
+///Sum Of Number with All  Number/////////////////////////
+
+function findSum(numbers) {
+  let sum = 0;
+
+  for (const number of numbers) {
+    sum += number;
+  }
+
+  return sum;
+}
+
+const numbersArray = [3, 7, 2, 8, 5];
+const sum = findSum(numbersArray);
+
+console.log("Sum:", sum); // Output: Sum: 25
+
+/////////////////////function factorial//////////////
+
+
+function factorial(n) {
+  if (n === 0 || n === 1) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+
+const num = 5;
+console.log(`Factorial of ${num} is: ${factorial(num)}`);
+
+
+///////////////////////Fibonacci Sequence://////////////
+
+function fibonacci(n) {
+  if (n <= 1) {
+    return n;
+  } else {
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
+}
+
+const fibIndex = 6;
+console.log(`Fibonacci at index ${fibIndex}: ${fibonacci(fibIndex)}`);
+
+
+
+
+////////////////////////function fibonacci(n) {
+  if (n <= 1) {
+    return n;
+  } else {
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
+}
+
+const fibIndex = 6;
+console.log(`Fibonacci at index ${fibIndex}: ${fibonacci(fibIndex)}`);
+
+
+//////////////Greatest Common Divisor (GCD)://////////////
+
+function gcd(a, b) {
+  if (b === 0) {
+    return a;
+  } else {
+    return gcd(b, a % b);
+  }
+}
+
+const num1 = 48;
+const num2 = 18;
+console.log(`GCD of ${num1} and ${num2}: ${gcd(num1, num2)}`);
+
+
+Prime Number Check://////////////////////////
+
+function isPrime(n) {
+  if (n <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+const checkNum = 17;
+console.log(`${checkNum} is prime: ${isPrime(checkNum)}`);
+
+
+////Factorization:
+
+
+function primeFactors(n) {
+  const factors = [];
+  for (let i = 2; i <= n; i++) {
+    while (n % i === 0) {
+      factors.push(i);
+      n /= i;
+    }
+  }
+  return factors;
+}
+
+const numToFactorize = 36;
+console.log(`Prime factors of ${numToFactorize}: ${primeFactors(numToFactorize)}`);

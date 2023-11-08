@@ -1,0 +1,184 @@
+||||||||This is Find User ||||||||||||
+
+mongo --version
+show dbs
+show collections
+use allone ...// use database one 
+
+
+...Find all user
+ db.dataall.find()
+ db.dataall.find({qty:69})
+db.dataall.find({qty:{$lte:36}}) // less then 36 show user adata
+db.dataall.find().count() // number documents count
+db.dataall.find().limit(3)
+db.dataall.find({qty:{$gt:36}}) // Greater then 36 show user adata
+db.dataall.find({qty:{$gt:36 , $lte:69}}) //less and greater 36 and 69
+db.dataall.find().toArray() //show all elemnt
+db.collectionName.find().pretty();
+db.dataall.find({} , {name:1 , _id:0}) // only all name and remove all id
+
+db.dataall.find().sort()({age:1 , name:1}) -- > asnding check  same and sort
+db.dataall.find().sort()({age:-1}) -- > dsending
+db.dataall.find().sort({age:1 , name:1}).forEach(x=>printjson(x)) // show all data 
+db.dataall.find().sort()({age:1 , name:1}).skip(10) ///skip mena (10) man 
+db.posts.find({}, {_id: 0, title: 1, date: 1})
+db.dataall.findOne().name
+db.dataall.findOne().isFunded
+db.dataall.findOne().foundedOn
+db.dataall.findOne().foundedoneTimeStamp
+
+var cursor = db.users.find({ roll_no: { $gt: 30 } });
+var dataSize = cursor.dataSize();
+db.users.dataSize({})
+db.users.totalSize()
+db.users.storageSize()
+db.users.totalIndexSize()
+///
+one:{
+  [true , false]
+}
+
+db.dataall.find({'identy.hashADHARcARD:TRUE'})
+//
+....FindOne // check one User
+...db.dataall.findOne({qty:69})
+
+
+////////DataType of MongodDb |||||||
+
+name:"jugal"
+isFunded:true
+employes:[{name:"karan" , "knaika"},{jugal , "anku"}]
+address:{city : "Mumbai", state :"MH"}
+age:25
+foundedone:new Date()
+foundedone:new Timestamp()//dataType of mongodb
+
+32bit
+64bit 
+float 45.45
+decmial :fffffff
+
+{
+  "name": "jugal",
+  "isFunded": true,
+  "employees": [
+    {"name": "karan"},
+    {"name": "knaika"},
+    {"name": "jugal"},
+    {"name": "anku"}
+  ],
+  "address": {
+    "city": "Mumbai",
+    "state": "MH"
+  },
+  "age": 25,
+  "foundedOn": new Date(),
+  "timestamp": Timestamp()
+}
+
+
+
+
+||||||||||||||||Atomicity in MongodDb||||||||||||||
+
+
+|||||||||||||||||Comparison opeartion MongodDb|||||||| MongoDB Query Operators
+$eq
+$gt
+$lt
+$lte
+$in
+$nin
+$gte
+$ne
+
+// Find documents where the "age" field is equal to 30.
+{ age: { $eq: 30 } }
+
+// Find documents where the "price" field is greater than 10.
+{ price: { $gt: 10 } }
+
+// Find documents where the "quantity" field is less than or equal to 100.
+{ quantity: { $lte: 100 } }
+
+// Find documents where the "score" field is greater than or equal to 90.
+{ score: { $gte: 90 } }
+
+
+// Find documents where the "category" field is neither "A" nor "B".
+{ category: { $nin: ["A", "B"] } }
+
+// Find documents where the "color" field is not equal to "red".
+{ color: { $ne: "red" } }
+
+/ Find documents where the "category" field is neither "A" nor "B".
+{ category: { $nin: ["A", "B"] } }
+
+
+
+///Logical opeartion ||||||
+..not
+..or
+..and
+..nor
+
+db.dataall.find({$or:[{qty:{$lte:36}},{qty:{$gte:69}}]}) ///LINK - 
+
+db.dataall.find({
+  $nor: [
+    { qty: { $lte: 36 } },
+    { qty: { $gte: 69 } }
+  ]
+})  //is better
+
+db.dataall.find({
+  $and: [
+    { qty: { $lte: 69 } },
+    { item: "mousepad" }
+  ]
+})
+
+
+
+||||||||What us MongodDb Element Query opeartion
+..$exists 
+..$type
+
+db.dataall.find({ item: { $exists: true } }) /// check user it true
+
+db.dataall.find({ item: { $exists: true , $type:"string" } })
+
+
+||||||||||||||||||Query array in mongose|||||||||||
+
+db.dataall.findOne({"experience.company":"Amazon"}
+db.dataall.findOne({experience:{$size:3}}) // how user experience work in company and check size
+
+...$all
+db.students.find({hobbies: {$all:['jugal','sharma']}}) // all meaning is jugal sharma both is true
+
+..$in 
+db.students.find({hobbies: {$in:['jugal','sharma']}}) // all meaning is jugal sharma both is not  true
+
+
+|||||||||||||||||Query to next level with evalution opeartion ||||||||
+
+..$regex is regular 
+
+db.users.find({name:{$regex:/^A/}}) // check start letter A 
+
+
+...$search
+// ^ means first character of name
+db.users.createIndex({bio:"text"}) // first create
+db.users.find({$text:{$search:"youtube"}}) // second use This
+
+db.dataall.find({ $text: { $search: "youtube" } })
+..
+
+
+
+
+

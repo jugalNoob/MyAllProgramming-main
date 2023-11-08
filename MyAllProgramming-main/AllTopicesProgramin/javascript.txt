@@ -1,0 +1,86 @@
+Data Types:
+
+Number: Represents numeric values, both integers and floating-point numbers.
+String: Represents a sequence of characters, such as text.
+Object: A complex data type that can store multiple values as properties or methods.
+Null: Represents the intentional absence of any object or value.
+Undefined: Represents a variable that has been declared but hasn't been assigned a value.
+Boolean: Represents true or false values.
+Logical Operators:
+
+|| (OR): Returns true if at least one operand is true.
+&& (AND): Returns true if all operands are true.
+Comparison Operators: Used to compare values, like == (equal), != (not equal), >, <, etc.
+Functions:
+
+
+Operators:
+
+Arithmetic operators (+, -, *, /, %).
+Comparison operators (==, ===, !=, !==, >, <).
+Logical operators (&&, ||, !).
+Ternary (conditional) operator.
+
+
+const: A keyword used to declare constants.
+Function: Declares a function.
+await: Used in asynchronous code to pause execution until a Promise is resolved.
+anonymous function: A function without a name.
+async function: A function that returns a Promise.
+generator function: A special type of function used to create iterable sequences.
+callback function: A function passed as an argument to another function.
+Function Composition in Jvacript
+static callback function: Often used in object-oriented programming.
+Array Methods:
+
+Various methods for manipulating arrays, such as push, pop, splice, slice, etc.
+String Methods:
+
+String manipulation methods like split, slice, search, replace, etc.
+If-Else Statements:
+
+Conditional statements in programming to make decisions.
+Looping:
+
+Control structures for repeating a block of code, including for, while, do-while, etc.
+Currying: A technique in functional programming where a function with multiple arguments is transformed into a series of functions each taking a single argument.
+
+Object Class: Possibly referring to object-oriented programming classes and objects.
+
+Math Methods: Functions for mathematical operations like random and floor.
+
+Time Date: Handling date and time in programming.
+
+ES6: Refers to ECMAScript 2015, which introduced many new features to JavaScript.
+
+JSON: JavaScript Object Notation for data interchange, with methods like JSON.stringify and JSON.parse.
+
+LocalStorage/SessionStorage/Cookies: Web storage and cookie mechanisms for storing data on the client-side.
+
+Window: Methods for interacting with the browser window, such as alert, prompt, confirm.
+
+Debounce/Throttle: Techniques to control the frequency of function execution in response to an event.
+
+Closures: Functions that "remember" the environment in which they were created.
+
+Objects: General concept of objects in programming.
+
+Set/Map: Data structures used to store collections of values.
+
+Apply/Call/Bind: Methods used to manipulate the context of function execution in JavaScript.
+
+Timeout/TimeInterval: Functions for delaying execution or repeatedly running code.
+
+If you have specific questions about any of these topics or need further information, please feel free to ask!
+
+
+
+Design Patterns:
+
+Common design patterns (Singleton, Factory, Observer, etc.)
+
+
+Memory Management and Performance Optimization:
+
+Garbage collection.
+Profiling and optimizing JavaScript code.

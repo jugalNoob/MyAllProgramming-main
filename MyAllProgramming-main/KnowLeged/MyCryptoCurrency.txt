@@ -1,0 +1,136 @@
+||||||||||||||||||||
+
+1::ocean --> coin 56  prcie  1500
+
+2::op -->coin 10  price  1400
+
+3::bico --> coin 78  prcie  1300
+
+4::vet --> coin 901  prcie  1300
+
+5::ldo --> coin  price 	1100
+
+6::ARB --> coin price 1000
+
+7::APT -->coin price 900
+
+8::LRC  -->coin  price 880
+
+9::NAKA  --> coin  price 879
+
+10::XRP  --> coin  price 800
+
+11::ADA  --> coin 31 price 760
+
+12::XLM  --> coin  66  price 766
+
+13::FLOW  -->coin 16 price 766
+
+14::ATOM  --> coin 1  price 751
+
+15::XEC  --> coin 306199 price 741
+
+16::FIL -->coin 2 price 752
+
+17::AGIX --> coin 39 price 688
+
+18::NEAR --> coin  price 666 
+
+19::VAI --> coin 89 price 600
+
+20::NMR --> price 591
+
+21::DYDX --> 555
+
+22::MARSH --> 515
+
+23::GALA --> 507
+
+24::ICP --> 488
+
+25::GRT  --> 454
+
+26::IOTX  --> 436
+
+27::BLOCK  --> 403
+
+28::HFT --> 389
+
+29::LPT --> 344-
+
+30::FET --> 344
+
+32::OSMO --> 312
+
+33::FLUX --> 308
+
+34::HBAR --> 308
+
+35::ERG  --> 300
+
+36::WAXP  --> 279
+
+37::SAND --> 245
+
+38::GMX --> 218
+
+39::ZIL --> 212
+
+40::GLQ --> 202
+
+41::SCRT  --> 190
+
+42::ALGO  -->120
+
+
+
+||||||||||||||||||||||||||||||||||||||||||| Hola |||||||||||||| 2023 fri aug 4
+
+chainLink --> 30 $
+
+uiniswap --> 19$
+
+sand --> 15$
+
+the graph --> 14$
+
+sushi ---> 11$
+
+avax --> 17$
+
+mana--> 5$
+
+fantom --> 6.8$
+
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||Main ||||||||||||||||
+
+Dot  -->50$
+
+Matic --> 34$ 
+
+sol --> 18$
+
+atmo-->15$
+
+theta -->15$
+
+cake --> 15$
+
+ada --> 14$
+
+ava --> 12$
+
+btt --> 9$
+
+near --> 9 $
+
+etc --> 9$
+
+ftm --> 6$
+
+vet --> 4$
+
+elgd --> 3$
+
+APT  -->14.12$

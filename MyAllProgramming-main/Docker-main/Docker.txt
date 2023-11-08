@@ -1,0 +1,102 @@
+winver
+
+1::setup and installion (macOS and windows)
+
+2::Basic
+
+3::Image -->  template to create docker container. 
+
+4::Container  -->  Running instance of the docker image container hold entire pahe to run application
+
+5::How to make docker file --> text document which contain all the commands that a user can all
+on the command line to assemble an image 
+
+example --> which file us use file 
+
+6::deploy appliaction
+
+7::Much more
+
+https://www.hostinger.in/tutorials/docker-cheat-sheet?ppc_campaign=google_search_generic_hosting_all&bidkw=defaultkeyword&lo=9144398&gclid=CjwKCAjw5_GmBhBIEiwA5QSMxIH6swAVM9o0MKdX9OS9xqfz1aJwv2RIemEDMIi37VzutfxZMgRLyxoCOLkQAvD_BwE#Clean_Up_Commands
+
+
+ run         Create and run a new container from an image
+  exec        Execute a command in a running container
+  ps          List containers
+  build       Build an image from a Dockerfile
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  images      List images
+  login       Log in to a registry
+  logout      Log out from a registry
+
+  search      Search Docker Hub for images
+  version     Show the Docker version information
+  info        Display system-wide information
+
+
+|||||||||||||||||||||||||||Docker image create 
+
+::docker --version
+
+::docker run hello-world -- > image create command 
+
+::docker images  --> check all  images im docker
+
+:: docker rmi -f 9c7a54a9a43c --> delete image rmi 
+
+::docker pull hello-world  --> this is your image and  then you pull your image  --> pull meaning dowload
+
+||docker pull python --> download 
+
+
+::docker search MySQL -- > that meaing is  search image
+
+
+:::docker run python -->
+
+::docker ps --> files run check your docker is running ||check status 
+
+CONTAINER ID   IMAGE     COMMAND     CREATED         STATUS         PORTS     NAMES
+98f4abc82ff9   python    "python3"   8 minutes ago   Up 8 minutes             pythonCont1
+
+
+::docker ps -a -->all files run check i running information
+
+::docker run -d --> dechet
+
+::docker run --name pythonContainer -d  python   --> change container name 
+
+::docker run --name pythonCont1 -it -d python -->  this command very important 
+
+CONTAINER ID   IMAGE     COMMAND     CREATED          STATUS          PORTS     NAMES
+98f4abc82ff9   python    "python3"   57 seconds ago   Up 55 seconds             pythonCont1
+
+:::docker exec -it 98f4abc82ff9 python3 -- >this command use for run python
+
+
+::docker inspect  98f4abc82ff9  --> container python information ||status start run 
+
+:::docker stop    pythonCont1 --> stop container
+
+
+::docker run 98f4abc82ff9 -->docker ps -a 
+
+::docker restart   pythonCont1 --> your running containers
+
+::docker login --> push your image in docker hub
+
+::docker commint --> 
+
+::docker push --> your in docker loaclhost 
+
+::docker copy --> 
+
+::docker logs   pythonCont1 --> check version containers
+
+::docker volume -->
+
+::docker logout --> 
+
+||||||||||||||||||||||||||||||||||||
+

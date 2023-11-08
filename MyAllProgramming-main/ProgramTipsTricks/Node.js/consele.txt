@@ -1,0 +1,62 @@
+const os = require('os');
+const Console = console.Console;
+
+// Create a new Console instance with custom streams and options
+const customConsole = new Console(process.stdout, process.stderr, false);
+
+// Logging and debugging using various console methods
+console.log('This is a log message.');
+console.info('This is an informational message.');
+console.warn('This is a warning message.');
+console.error('This is an error message.');
+
+console.assert(2 + 2 === 5, 'Math is broken!'); // Assertion failure
+
+console.count('Counter'); // Counter: 1
+console.count('Counter'); // Counter: 2
+console.countReset('Counter'); // Resetting counter
+
+console.group('Group');
+console.log('Inside a group');
+console.groupEnd();
+
+console.groupCollapsed('Collapsed Group');
+console.log('Inside a collapsed group');
+console.groupEnd();
+
+console.debug('Debug information');
+
+console.dir(os.userInfo());
+console.dirxml('<element>Content</element>');
+
+console.clear(); // Clear the console (works in some environments)
+
+const tableData = [
+  { name: 'Alice', age: 30 },
+  { name: 'Bob', age: 25 },
+];
+console.table(tableData);
+
+console.time('Timer');
+setTimeout(() => {
+  console.timeEnd('Timer');
+}, 1000);
+
+console.timeLog('Timer', 'Time logging');
+
+console.trace('Tracing an error');
+
+// Inspector-only methods (might not work in all environments)
+console.profile('Profiling');
+console.profileEnd('Profiling');
+console.timeStamp('Timestamp');
+
+
+////!SECTION
+const err = new Error('The message');
+console.error(err.message);
+
+const cause = new Error('The remote HTTP server responded with a 500 status');
+const symptom = new Error('The message failed to send', { cause });
+
+console.log(symptom);

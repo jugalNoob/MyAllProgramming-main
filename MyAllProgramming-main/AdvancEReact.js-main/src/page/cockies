@@ -1,0 +1,60 @@
+import Cookies from 'js-cookie';
+
+// Your user data
+const userData = {
+  userId: 123,
+  username: 'exampleUser',
+  // Add more user data as needed
+};
+
+// Convert user data to a JSON string
+const userDataString = JSON.stringify(userData);
+
+// Check if the data fits within the desired size limit
+if (userDataString.length <= 5) {
+  // Set the cookie if the data size is within the limit
+  Cookies.set('token', userDataString, {
+    expires: 7,     // Expires in 7 days
+    secure: true,   // Cookie will be sent over HTTPS only
+    path: '/home',  // Cookie is valid for the '/home' path
+    httpOnly: true, // Cookie is accessible only via HTTP (not JavaScript)
+    domain: 'home/id/5', // Specify the domain for the cookie
+  });
+} else {
+  console.error('Data size exceeds the specified limit of 5 characters.');
+  // Handle the case where the data exceeds the size limit
+}
+
+
+//////////////!SECTION
+import Cookies from 'js-cookie';
+
+ let datas=  Cookies.set("token", JSON.stringify(userData), {
+            expires: 7,
+            secure: true,
+          });
+          
+          console.log(datas)
+
+
+
+            useEffect(() => {
+    const allcookies = () => {
+      const token = Cookies.get("token");
+      const tokenObject = token ? JSON.parse(token) : {};
+      console.log(tokenObject);
+
+      setData(tokenObject);
+    }
+    allcookies();
+  }, []);
+
+       {data && Object.keys(data).length > 0 && (
+        <div>
+          <h1>name-{data.name}</h1>
+          <h1>email-{data.email}</h1>
+          <h1>age-{data.age}</h1>
+          <h1>time-{data.times}</h1>
+          <h6>{data.pushed[0]}</h6>
+        </div>        
+      )}

@@ -1,0 +1,9 @@
+REDME.md
+
+one.txt
+
+demos/
+
+# This is a comment, Git will ignore it
+
+#ignore user folder --> demos/

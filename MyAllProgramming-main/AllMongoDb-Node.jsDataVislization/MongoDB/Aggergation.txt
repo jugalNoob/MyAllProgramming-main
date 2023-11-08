@@ -1,0 +1,149 @@
+Aggregation to write query 
+
+$group $limit $project $sort $match $addField $count $lookup $out
+
+
+1::DB.collection.Aggregation(pipeline , option)
+
+...$match
+db.users.aggregate([{$match:{gender:"female"}}]) //check gender with match
+
+
+...$group 
+db.users.aggregate([{$group:{ }}] )
+db.users.aggregate([{$group:{_id:"$roll_no" }}] )
+db.users.aggregate([{$group:{_id:"$roll_no" , namee:{$push:"$name"}}}] ) // with age and name
+
+db.users.aggregate([{$group:{_id:"$roll_no" , namee:{$push:"$$ROOT"}}}] )///!SECTION
+is show differnt side  AGE is show full document $$ROOT  and namee is show your users
+
+
+db.users.aggregate([
+  {$match: {
+      gender: "male"
+    }
+  },
+  {$group: {
+      _id: "$roll_no",
+      countOfTeacher: {
+        $sum: 1
+      }
+    }
+  }
+])
+
+...$unwind
+db.users.aggregate([{{$unwind:"Hobbies"},$group:{_id:"$roll_no",subject:{$push:"$subject"}}}])
+
+
+...$count
+db.users.aggregate([
+  {
+    $match: {
+      gender: "male"
+    }
+  },
+  {
+    $count: "femaleCount"
+  }
+])  // count user how many male in your document
+
+
+
+ ....$limit
+ db.users.aggregate([
+  {
+    $match: {
+      gender: "male" // Replace "male" with the desired value for gender filtering
+    }
+  },
+  {
+    $limit: 2 // Replace 10 with the desired number of documents to limit to
+  }
+])
+
+
+...$filter
+
+
+
+|||||Bucket Aggregation||||||||||||
+
+Ans::When you want 
+
+convert to grouping 
+
+db.users.aggregate([
+  { $match: {
+      gender: "male"
+    }
+{ 
+    $sort: { "accommodates": -1 } 
+  },
+  },
+  {
+    $bucket: {
+      groupBy: "$roll_no",
+      boundaries: [0, 50, 90,], // Define the boundaries for your custom buckets
+      default: "greater than 100 wala group",
+      output: {
+        count: { $sum: 1 },names:{$push:"name"}
+      }
+    }
+  }
+])
+
+
+...$Projects
+
+db.users.aggregate([{$project:{ _id:0}}]).pretty() //remove id   
+
+db.users.aggregate([{$project:{ _id:0,name:1 }}]).pretty()  // 0 mean is remove and 1 mean is show
+db.users.aggregate([{$project:{ _id:1,name:0 }}]).pretty()  //id show and name is remove
+
+
+db.posts.aggregate([
+  // Stage 1: Only find documents that have more than 1 like
+  {
+    $match: { likes: { $gt: 1 } }
+  },
+  // Stage 2: Group documents by category and sum each categories likes
+  {
+    $group: { _id: "$category", totalLikes: { $sum: "$likes" } }
+  }
+])
+
+
+
+///////LookUp Aggregation LookUp
+
+db.comments.aggregate([
+  {
+    $lookup: {
+      from: "movies",
+      localField: "movie_id",
+      foreignField: "_id",
+      as: "movie_details",
+    },
+  },
+  {
+    $limit: 1
+  }
+])
+
+db.yourCollection.aggregate([
+  {
+    $match: {
+      "identity.hashPanCard": false,
+      "identity.hashAdhaarCard": true
+    }
+  }
+]);
+
+
+||||Improtant Roe class
+
+...$Capped collection
+db.createCollection("man", { capped: true, max: 4, size: 1000000 })
+
+
