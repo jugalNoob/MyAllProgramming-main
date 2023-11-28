@@ -1,4 +1,16 @@
 
+///Create a custom create  a ProTotype |||||||||||||||||||||||||||||||||||
+
+Date.prototype.getLastYear = function() {
+    return this.getFullYear() - 1; // Get the current year and subtract 1
+  };
+  
+  let date = new Date();
+  console.log(date.getLastYear()); // Output: Previous year
+  
+
+
+
 ///Nullish Coalescing Operation 
 
 let objt={
