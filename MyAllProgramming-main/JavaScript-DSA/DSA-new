@@ -18,6 +18,43 @@
 18::Link list
 19::reverse Linked list
 
+///Random  String Create 
+let str = "khjdscjhblcsfdjlhb";
+let word = "";
+let length = 8; // Define the length of the random word
+for (let i = 0; i < length; i++) {
+  let random = Math.floor(Math.random() * str.length);
+  word += str[random];
+}
+console.log(word);
+let append = [];
+for (let i = 0; i < word.length; i++) {
+  append.push(word[i]); // Push each character into the array
+}
+console.log(append); // Output: Array containing individual characters of the word
+
+
+||||||||||||||||||||||||||::::::::::::::::::::::::::::::::::Scendom Function |||||||||||||||||||||||||||||||
+function generateRandomWord(length) {
+  const characters = 'abcdefghijklmnopqrstuvwxyz'; // Pool of characters
+  let randomWord = '';
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    randomWord += characters[randomIndex];
+  }
+
+  return randomWord;
+}
+
+// Generate a random word of length 6
+const randomWord = generateRandomWord(6);
+console.log(randomWord);
+
+// Create an array and push the random word into it
+let append = [];
+append.push(randomWord);
+console.log(append); // Output: ["randomWord"]
 
 
 
