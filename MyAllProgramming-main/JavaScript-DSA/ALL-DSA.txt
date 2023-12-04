@@ -1,3 +1,11 @@
+Sum of array elemnt ||||||||||||||||||||||||||||| 
+
+let one=[10 , 20 , 30 , -10]
+let two=one.reduce((alm , elem)=>{
+    return alm + elem
+})
+console.log(two)
+
 function maxSubArray(nums) {
   let sum = 0;
   let max = nums[0];
