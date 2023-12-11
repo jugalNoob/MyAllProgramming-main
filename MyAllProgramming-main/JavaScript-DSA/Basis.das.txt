@@ -1,3 +1,27 @@
+///////////// Pushing  data check your word information |||||||||||||||||||||||||||
+
+let data = [];
+let item = data.length;
+let one = ["fuck" , "suck" , "dick" , "bitch"];
+function push(value) {
+    if (one.includes(value) === data.includes(value)) {
+        data.push(value);
+    }
+}
+function display() {
+    console.log(data);
+}
+push("jugal");
+push("karan");
+push("fuck")
+push(30); // Won't be added since it's not in the 'one' array
+display(); // Output the content of the data array
+
+
+
+
+
+
 /////////// Return const function ??????????????
 const one = (ones) => (two) => (three) => console.log(ones, two, three);
 one(1)(2)(3);
