@@ -6,6 +6,10 @@ one(1)(2)(3);
 
 ///Create a custom create  a ProTotype |||||||||||||||||||||||||||||||||||
 
+const one = [10, 20, 30, 40];
+console.log(Object.getPrototypeOf(one)); 
+
+
 Date.prototype.getLastYear = function() {
     return this.getFullYear() - 1; // Get the current year and subtract 1
   };
