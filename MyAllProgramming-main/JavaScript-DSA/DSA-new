@@ -74,7 +74,7 @@ console.log(sumofnatural(10))
 console.log(sumofnatural(8))
 
 
-2:::sum of digits of a number ||||||||
+2:::sum of digits of a number ||||||||  //////////////////////////////////////////////////////////////////
 function sumofDigits(num){
 let sum=0;
 while(num > 0){
@@ -86,7 +86,19 @@ return sum
 console.log(sumofDigits(1287))
 
 
-3:::count the number of digits of a number 
+3:::count the number of digits of a number  //////////////////////////////////////////////////////////////////
+
+function ones(sum){
+   let count= sum.toString().length;
+   let num=3
+   if(count == num){
+    console.log(true)
+   console.log(count)
+   }else{
+    console.log(false)
+   }
+}
+ones(123)
 
 function countDigits(num) {
     // Convert the number to a string and get its length
