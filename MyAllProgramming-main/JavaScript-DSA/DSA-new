@@ -66,6 +66,7 @@ function sumofnatural(num){
     //     sum=sum+i
     // }
     // return sum
+console.log(sumofnatural(5)) will output 15 (sum of natural numbers up to 5: 1 + 2 + 3 + 4 + 5 = 15).
     return  num*(num+1)/2
 }
 console.log(sumofnatural(5))
